@@ -2,11 +2,31 @@
 <html>
 <head>
 	<title>index</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-	<h1>index</h1>
-	<p>Welcome, where we can communicate with each other, learn from each other!</p>
-	<p style="border: 1px dashed #ccc;">Welcome, where we can communicate with each other, learn from each other!</p>
-	<p style="border: 1px dashed #0ff;">Welcome, where we can communicate with each other, learn from each other!</p>
+	<h1>Snapshotos</h1>
+	<a href="http://www.baidu.com" onclick="popUp(this.href); return false;">打开百度</a>
+	<ul>
+		<li><a href="images/black.jpg" alt="" title="A black pic" onclick="showPic(this); return false;">black</a></li>
+		<li><a href="images/car.jpg" alt="" title="A car pic" onclick="showPic(this); return false;">car</a></li>
+		<li><a href="images/color.jpg" alt="" title="A color pic" onclick="showPic(this); return false;">color</a></li>
+		<li><a href="images/diamand.jpg" alt="" title="A diamand pic" onclick="showPic(this); return false;">diamand</a></li>
+		<li><a href="images/dog.jpg" alt="" title="A dog pic" onclick="showPic(this); return false;">dog</a></li>
+		<li><a href="images/grass.jpg" alt="" title="A grass pic" onclick="showPic(this); return false;">grass</a></li>
+		<li><a href="images/shoose.jpg" alt="" title="A shoose pic" onclick="showPic(this); return false;">shoose</a></li>
+		<li><a href="images/snow.jpg" alt="" title="A snow pic" onclick="showPic(this); return false;">snow</a></li>
+	</ul>
+	<img id="placeholder" src="images/lock.jpg" alt="my img gallery">
+	<p id="description">Choose an image</p>
+	<script type="text/javascript" src="js/showPic.js"></script>
+	<script type="text/javascript">
+		// window.onload = countBodyChildren;
+	// 	var body_element = document.getElementsByTagName("body")[0];
+	// 	alert(body_element.childNodes.length)
+	// 	alert(body_element.nodeType)
+	// alert(description.firstChild.nodeValue)
+	</script>
 </body>
 </html>
