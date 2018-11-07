@@ -1,11 +1,18 @@
 function showPic(whichPic){
-	console.log(whichPic)
-	var source = whichPic.getAttribute("href");
+	// console.log(whichPic)
+    if(!document.getElementById("placeholder")) return false;
+	var source = whichPic.getAttribute("href");//var source = whichPic.href; //HTML-DOM
 	var placeholder = document.getElementById("placeholder");
-	placeholder.setAttribute("src",source);
-	var text = whichPic.getAttribute("title");
-	var description = document.getElementById("description");
-	description.firstChild.nodeValue = text;
+	if(placeholder.nodeName != "IMG") return false;
+	placeholder.setAttribute("src",source);//placeholder.src = source //HTML-DOM
+	if(document.getElementById("description")){
+        var text = whichPic.getAttribute("title") ? whichPic.getAttribute("title") : "";
+        var description = document.getElementById("description");
+        if(description.firstChild.nodeValue == 3){
+            description.firstChild.nodeValue = text;
+        }
+    }
+    return true;
 }
 function popUp(winURL){
 	window.open(winURL,"popup","width=320,height=480");
@@ -23,3 +30,28 @@ function prepareLinks(){
 		}
 	}
 }
+function prepareGallery(){
+    if(!document.getElementsByTagName) return false;
+    if(!document.getElementById) return false;
+    if(!document.getElementById("imageGallery")) return false;
+    var gallery = document.getElementById("imageGallery");
+    var links = gallery.getElementsByTagName("a");
+    for(var i = 0; i < links.length; i++){
+        links[i].onclick = function(){
+            return !showPic(this);
+        }
+    }
+}
+function addLoadEvent(func){
+    var oldonload = window.onload;
+    if(typeof window.onload != 'function'){
+        window.onload = func;
+    }else{
+        window.onload = function()
+        {
+            oldonload();
+            func();
+        }
+    }
+}
+addLoadEvent(prepareGallery)

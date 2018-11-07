@@ -7,18 +7,48 @@
 </head>
 <body>
 	<h1>Snapshotos</h1>
-	<h1>这个是试试webstorm提交</h1>
-	<h1>这个是试试gitignore提交</h1>
 	<a href="http://www.baidu.com" onclick="popUp(this.href); return false;">打开百度</a>
-	<ul>
-		<li><a href="images/black.jpg" title="A black pic" onclick="showPic(this); return false;">black</a></li>
-		<li><a href="images/car.jpg" title="A car pic" onclick="showPic(this); return false;">car</a></li>
-		<li><a href="images/color.jpg" title="A color pic" onclick="showPic(this); return false;">color</a></li>
-		<li><a href="images/diamand.jpg" title="A diamand pic" onclick="showPic(this); return false;">diamand</a></li>
-		<li><a href="images/dog.jpg" title="A dog pic" onclick="showPic(this); return false;">dog</a></li>
-		<li><a href="images/grass.jpg" title="A grass pic" onclick="showPic(this); return false;">grass</a></li>
-		<li><a href="images/shoose.jpg" title="A shoose pic" onclick="showPic(this); return false;">shoose</a></li>
-		<li><a href="images/snow.jpg" title="A snow pic" onclick="showPic(this); return false;">snow</a></li>
+	<ul id="imageGallery" style="overflow: hidden;">
+		<li>
+            <a href="images/black.jpg" title="A black pic">
+                <img src="images/black.jpg" alt="" width="100" height="75">
+            </a>
+        </li>
+		<li>
+            <a href="images/car.jpg" title="A car pic">
+                <img src="images/car.jpg" alt="" width="100" height="75">
+            </a>
+        </li>
+		<li>
+            <a href="images/color.jpg" title="A color pic">
+                <img src="images/color.jpg" alt="" width="100" height="75">
+            </a>
+        </li>
+		<li>
+            <a href="images/diamand.jpg" title="A diamand pic">
+                <img src="images/diamand.jpg" alt="" width="100" height="75">
+            </a>
+        </li>
+		<li>
+            <a href="images/dog.jpg" title="A dog pic">
+                <img src="images/dog.jpg" alt="" width="100" height="75">
+            </a>
+        </li>
+		<li>
+            <a href="images/grass.jpg" title="A grass pic">
+                <img src="images/grass.jpg" alt="" width="100" height="75">
+            </a>
+        </li>
+		<li>
+            <a href="images/shoose.jpg">
+                <img src="images/shoose.jpg" alt="" width="100" height="75">
+            </a>
+        </li>
+		<li>
+            <a href="images/snow.jpg" title="A snow pic">
+                <img src="images/snow.jpg" alt="" width="100" height="75">
+            </a>
+        </li>
 	</ul>
 	<img id="placeholder" src="images/lock.jpg" alt="my img gallery">
 	<p id="description">Choose an image</p>
