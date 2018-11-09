@@ -29,6 +29,7 @@ img{
 }
 #imageGallery{
     list-style: none;
+    overflow: hidden;
 }
 #imageGallery li{
     display: inline;
