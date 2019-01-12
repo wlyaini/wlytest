@@ -2,30 +2,167 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Explining the Document Object Model</title>
-    <link rel="stylesheet" href="css/typography.css">
+    <title>11</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            opacity: .8;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #eaeaea;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        .header, .footer{
+            height: 60px;
+            background-color: #3B73D0;
+        }
+        .wrap{
+            width: 1170px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 5px #999 ;
+            overflow: hidden;
+            padding: 35px;
+        }
+        .wrapLeft{
+            width: 66.666%;
+            float: left;
+            min-height: 500px;
+        }
+        .wrapRight{
+            width: 33.333%;
+            float: right;
+            min-height: 500px;
+        }
+        .talkMsg{
+            padding: 15px;
+        }
+        .leftCont{
+            /*padding: 35px;*/
+        }
+        .talkBox{text-align: right;}
+        .talkBox > textarea{
+            resize: none;
+            width: 100%;
+            height: 100px;
+        }
+        .talkBox .btnSend{
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #3B73D0;
+            border-radius: 5px;
+            color: #fff;
+
+        }
+        .talkList > li > a{
+            display: inline-block;
+            background-color: #65A03B;
+            padding: 5px 15px;
+            color: #fff;
+        }
+        .sendMsg{
+            background-color: #3B73D0;
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 16px;
+            color: #fff;
+            font-weight: bold;
+            margin-left: 35px;
+        }
+        .rightCont{
+            margin-left: 35px;
+            border: 1px dashed #ddd;
+            margin-top:10px;
+        }
+        .sortList{
+            /*margin-top:20px;*/
+        }
+        .sortList > li{
+            border-bottom: 1px dashed #ddd;
+            padding: 10px;
+        }
+        .sortList > li:last-child{
+            border-bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    <ul id="navigation">
-        <li><a href="index.html" accesskey="1">Home</a></li>
-        <li><a href="search.html" accesskey="4">Search</a></li>
-        <li><a href="contact.html" accesskey="9">Home</a></li>
-    </ul>
-    <h1>What is the Document Object Modal?</h1>
-    <p>
-        The <abbr title="World Wide Web Consortium">W3C</abbr> defines the <abbr title="Document Object Modal">DOM</abbr> as:
-    </p>
-    <blockquote cite="http://www.w3.org/DOM/">
-        <p>
-            A plantform- and language-neutral interface that will allow programs and script to dynamically access and update the content,structure and style of document.
-        </p>
-    </blockquote>
-    <p>
-        It is an <abbr title="Application programming interface">API</abbr> that can be used to navigat <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Extensible Markup Language">XML</abbr> document.
-    </p>
-    <script src="js/addLoadEvent.js"></script>
-    <script src="js/displayAbbreviations.js"></script>
-    <script src="js/displayCitations.js"></script>
-    <script src="js/diaplayAccessKeys.js"></script>
+    <header class="header"></header>
+    <div class="wrap">
+        <div class="wrapLeft">
+                <div class="talkBox">
+                    <textarea name="" id=""></textarea>
+                    <a href="#" class="btnSend">发布</a>
+                </div>
+                <div class="talkMsg">
+                    <ul class="talkList list-inline">
+                        <li class="active"><a href="#myData" data-toggle="tab">我的资料</a></li>
+                        <li><a href="#mySend" data-toggle="tab">我发布的消息</a></li>
+                        <li><a href="#friendSend" data-toggle="tab">好友发布的消息</a></li>
+                    </ul>
+                    <div class="listContent tab-content">
+                        <div class="tabList tab-pane active" id="myData">
+                            <ul class="sortList">
+                                <li class="media">
+                                    <span class="media-left"><img src="https://img2.woyaogexing.com/2019/01/12/b39e6fd963544e43b8198676e29a5f3e!400x400.jpeg" width="80" style="border-radius: 50%" alt=""></span>
+                                    <div class="media-body" style="font-size: 16px;">
+                                        用户一
+                                    </div>
+                                </li>
+                                <li class="media">
+                                    <span class="media-left"><img src="https://img2.woyaogexing.com/2019/01/12/b39e6fd963544e43b8198676e29a5f3e!400x400.jpeg" width="80" style="border-radius: 50%" alt=""></span>
+                                    <div class="media-body" style="font-size: 16px;">
+                                        用户一
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tabList tab-pane" id="mySend">
+                            内容2
+                        </div>
+                        <div class="tabList tab-pane" id="friendSend">
+                            内容3
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="wrapRight">
+
+            <span class="sendMsg">发布排行榜</span>
+            <div class="rightCont">
+                <ul class="sortList">
+                    <li class="media">
+                        <span class="media-left"><img src="https://img2.woyaogexing.com/2019/01/12/b39e6fd963544e43b8198676e29a5f3e!400x400.jpeg" width="80" style="border-radius: 50%" alt=""></span>
+                        <div class="media-body" style="font-size: 16px;">
+                            用户一
+                        </div>
+                    </li>
+                    <li class="media">
+                        <span class="media-left"><img src="https://img2.woyaogexing.com/2019/01/12/b39e6fd963544e43b8198676e29a5f3e!400x400.jpeg" width="80" style="border-radius: 50%" alt=""></span>
+                        <div class="media-body" style="font-size: 16px;">
+                            用户一
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <footer class="footer"></footer>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
